@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple CAPTCHA</title>
+ 
+</head>
+<body>
+
+  <div class="captcha" id="captcha"></div>
+  <button onclick="generateCaptcha()">Refresh CAPTCHA</button>
+  <br>
+  <p id="result"></p>
+
+  <script>
+
+    function generateCaptcha() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      generatedCaptcha = "";
+      for (let i = 0; i < 6; i++) {
+        generatedCaptcha += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      document.getElementById("captcha").innerText = generatedCaptcha;
+      document.getElementById("result").innerText = "";
+      document.getElementById("userInput").value = "";
+    }
+ generateCaptcha();
+  </script>
+</body>
+</html>

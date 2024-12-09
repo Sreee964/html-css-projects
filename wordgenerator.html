@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Word Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #word {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="word"></div>
+  <button onclick="generateWord()">Generate Word</button>
+
+  <script>
+    const words = [
+      "apple", "banana", "cherry", "dragonfruit", "elephant", "frog",
+      "guitar", "happiness", "island", "jupiter", "kangaroo", "lemon",
+      "mountain", "notebook", "ocean", "pencil", "queen", "rainbow",
+      "sunshine", "tiger", "umbrella", "volcano", "watermelon", "xylophone",
+      "yacht", "zebra"
+    ];
+
+    function generateWord() {
+      const randomIndex = Math.floor(Math.random() * words.length);
+      const randomWord = words[randomIndex];
+      document.getElementById("word").innerText = randomWord;
+    }
+  </script>
+</body>
+</html>
